@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="yuu">
+  <title>Ansibleを使おう</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Ansibleを使おう</h1>
+  <p class="subtitle">手順書ではなくコードへ</p>
+  <p class="author">yuu</p>
+</section>
+
+<section id="ansible-is-何" class="slide level2">
+<h2>Ansible is 何?</h2>
+<p>一言でいうと、<br />
+YAML形式のテキストファイル(a.k.a Playbook)に記述した処理を実行するツール。</p>
+<p>(処理: apt install emacs, etc…)<br />
+<a href="https://www.ansible.com/">公式サイト</a></p>
+</section>
+<section class="slide level2">
+
+<p>はじめは、<br />
+バッチファイルやbash scriptと似たようなもの。<br />
+そう思ってくれればいいと思います。</p>
+</section>
+<section id="メリット" class="slide level2">
+<h2>メリット</h2>
+<ul>
+<li>冪等性がある</li>
+<li>エージェントレスアーキテクチャである</li>
+<li>モジュールによる拡張/再利用性の高い</li>
+<li>シンプルに記述できる</li>
+</ul>
+</section>
+<section id="冪等性" class="slide level2">
+<h2>冪等性</h2>
+<p>「何を実行するのか」ではなく、「どういう状態があるべき姿なのか」を記述します。<br />
+そのため、同じ処理を何回実行しても同じ結果になります。</p>
+<p>⇒ 既にあるべき状態の場合には実行しない</p>
+</section>
+<section id="エージェントレス" class="slide level2">
+<h2>エージェントレス</h2>
+<p>Python 2.4以降がインストールされていることだけ。</p>
+</section>
+<section id="モジュールによる拡張再利用性" class="slide level2">
+<h2>モジュールによる拡張再利用性</h2>
+<p>WindowsやCloudといったモジュールもあり、たくさんあります。</p>
+<pre class="ex:yaml"><code>- git:
+    repo: &#39;https://foosball.example.org/path/to/repo.git&#39;
+    dest: /srv/checkout
+    version: release-0.22</code></pre>
+<p><a href="https://docs.ansible.com/ansible/latest/modules/modules_by_category.html">module index</a></p>
+</section>
+<section id="シンプルに記述できる" class="slide level2">
+<h2>シンプルに記述できる</h2>
+<ul>
+<li>YAML形式で記述するため、人によって差が出にくい</li>
+<li>逆に、複雑な処理は助長になるかも…</li>
+</ul>
+</section>
+<section id="デメリット" class="slide level2">
+<h2>デメリット</h2>
+<ul>
+<li>新たな言語/モジュール名を覚えること</li>
+</ul>
+</section>
+<section><section id="demo" class="title-slide slide level1"><h1>DEMO</h1></section></section>
+<section><section id="おわり" class="title-slide slide level1"><h1>おわり</h1></section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: '/usr/share/javascript/mathjax/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/math/math.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
