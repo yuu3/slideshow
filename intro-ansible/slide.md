@@ -1,8 +1,11 @@
 ---
 title: Ansibleを使おう
-subtitle: 手順書ではなくコードへ
 author: yuu
+date: Jan 18, 2019
 ---
+
+## 目標
+手順書ではなくコードへ
 
 ## Ansible is 何?
 一言でいうと、  
