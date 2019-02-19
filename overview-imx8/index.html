@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="yuu">
+  <title>i.MX 8 紹介</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://yuu.github.io/slideshow/reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="https://yuu.github.io/slideshow/reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://yuu.github.io/slideshow/reveal.js/css/print/pdf.css' : 'https://yuu.github.io/slideshow/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://yuu.github.io/slideshow/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">i.MX 8 紹介</h1>
+  <p class="author">yuu</p>
+  <p class="date">Feb 19, 2019</p>
+</section>
+
+<section id="about-i.mx-8" class="slide level2">
+<h2>About i.MX 8?</h2>
+<p>NXP社が発表したSoC。<br />
+i.MX 8シリーズはたくさんある。</p>
+<ul>
+<li><p>i.MX 8ファミリ (2013年9月)<br />
+Advanced Graphics, Performance and Vitualization</p></li>
+<li><p>i.MX 8Mファミリ (CES 2017)<br />
+Advanced Audio, Voice and Video</p></li>
+<li><p>i.MX 8M Miniファミリ (CES 2017)<br />
+Embedded Consumer and Industrial Applications</p></li>
+<li><p>i.MX 8Xファミリ (2017年3月)<br />
+Safety certifiable and efficient performance</p></li>
+</ul>
+</section>
+<section id="i.mx-8-family" class="slide level2">
+<h2>i.MX 8 family</h2>
+<p>Basic Spec</p>
+<table>
+<thead>
+<tr class="header">
+<th>kind</th>
+<th>QuadMax</th>
+<th>QuadPlus</th>
+<th>Quad</th>
+<th>Quad X Plus</th>
+<th>M Quad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CPU(Cortex)</td>
+<td>A53(x4), A72(x2)</td>
+<td>A53(x4), A72(x1)</td>
+<td>A53(x4)</td>
+<td>A35(x4)</td>
+<td>A53(x4)</td>
+</tr>
+<tr class="even">
+<td>GPU</td>
+<td>GC7000(x2)</td>
+<td>GC7000Lite(x2)</td>
+<td>GC7000Lite(x2)</td>
+<td>GC7000Lite</td>
+<td>GC7000Lite</td>
+</tr>
+<tr class="odd">
+<td>VPU</td>
+<td>H.265 dec 4K/2K <br> H.264 enc/dec 1080p</td>
+<td>&lt;-</td>
+<td>&lt;-</td>
+<td>&lt;-</td>
+<td>&lt;-</td>
+</tr>
+<tr class="even">
+<td>Other cores</td>
+<td>Cortex-M4F(x2)</td>
+<td>&lt;-</td>
+<td>&lt;-</td>
+<td>Cortex-M4F</td>
+<td>Cortex-M4F</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="i.mx-8m-family" class="slide level2">
+<h2>i.MX 8M family</h2>
+<p>Basic Spec</p>
+<table>
+<thead>
+<tr class="header">
+<th>kind</th>
+<th>Quad</th>
+<th>QuadLite</th>
+<th>Dual</th>
+<th>Solo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CPU(Cortex)</td>
+<td>A53(x4)</td>
+<td>A53(x4)</td>
+<td>A53(x2)</td>
+<td>A53</td>
+</tr>
+<tr class="even">
+<td>GPU</td>
+<td>GC7000Lite</td>
+<td>&lt;-</td>
+<td>&lt;-</td>
+<td>GC7000nanoULTRA</td>
+</tr>
+<tr class="odd">
+<td>VPU</td>
+<td>4Kp60, H.265 and VP9</td>
+<td>-</td>
+<td>4Kp60, H.265 and VP9</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>Other cores</td>
+<td>Cortex-M4F</td>
+<td>&lt;-</td>
+<td>&lt;-</td>
+<td>&lt;-</td>
+</tr>
+<tr class="odd">
+<td>Audio</td>
+<td>20ch in/out <br> 32-bit up to 384 kHz <br> with DSD512 support</td>
+<td>&lt;-</td>
+<td>&lt;-</td>
+<td>&lt;-</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="i.mx-8m-mini-family" class="slide level2">
+<h2>i.MX 8M Mini family</h2>
+<p>Basic Spec</p>
+<table>
+<thead>
+<tr class="header">
+<th>kind</th>
+<th>8M Mini</th>
+<th>8M Mini Lite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CPU(Cortex)</td>
+<td>A53(x4)</td>
+<td>&lt;-</td>
+</tr>
+<tr class="even">
+<td>GPU</td>
+<td>2D/3D graphics</td>
+<td>&lt;-</td>
+</tr>
+<tr class="odd">
+<td>Video Decode</td>
+<td>1080p60 H.264, H.265, VP8, VP9</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>Video Encode</td>
+<td>1080p60 H.264, VP8</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>Other cores</td>
+<td>Cortex-M4F</td>
+<td>&lt;-</td>
+</tr>
+<tr class="even">
+<td>Audio</td>
+<td>*</td>
+<td>&lt;-</td>
+</tr>
+</tbody>
+</table>
+<p>*I2S(x20). 32-bit up to 384 kHz with DSD512 and TDM support. 8-ch PDM microphone inputs.</p>
+</section>
+<section id="i.mx-8x-family" class="slide level2">
+<h2>i.MX 8X family</h2>
+<p>Basic Spec</p>
+<table>
+<thead>
+<tr class="header">
+<th>kind</th>
+<th>QuadXPlus</th>
+<th>DualXPlus</th>
+<th>DualX</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CPU(Cortex)</td>
+<td>A35(x4)</td>
+<td>A35(x2)</td>
+<td>A35(x2)</td>
+</tr>
+<tr class="even">
+<td>GPU</td>
+<td>GC7000Lite</td>
+<td>GC7000Lite</td>
+<td>GC7000UltraLite</td>
+</tr>
+<tr class="odd">
+<td>VPU</td>
+<td>4K H.264 dec <br> 1080p H.264 enc/dec</td>
+<td>&lt;-</td>
+<td>1080p H.264 enc/dec</td>
+</tr>
+<tr class="even">
+<td>Other cores</td>
+<td>Cortex-M4F</td>
+<td>&lt;-</td>
+<td>&lt;-</td>
+</tr>
+<tr class="odd">
+<td>Ethernet</td>
+<td>gigabit with AVB (x2)</td>
+<td>&lt;-</td>
+<td>gigabit with AVB <br> 10/100</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="aaaa" class="slide level2">
+<h2>aaaa</h2>
+<p>bbbb</p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://yuu.github.io/slideshow/reveal.js/lib/js/head.min.js"></script>
+  <script src="https://yuu.github.io/slideshow/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+        height: 1080,
+        math: {
+          mathjax: '/usr/share/javascript/mathjax/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://yuu.github.io/slideshow/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://yuu.github.io/slideshow/reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://yuu.github.io/slideshow/reveal.js/plugin/math/math.js', async: true },
+          { src: 'https://yuu.github.io/slideshow/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
