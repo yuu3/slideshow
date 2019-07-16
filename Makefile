@@ -8,5 +8,11 @@ index.html: $(SRC)
 local.html: $(SRC)
 	pandoc -s -t revealjs -V revealjs-url=../reveal.js -V transition=fade --mathjax -V theme:beige -o $@ $(SRC)
 
+refleash: index.html
+	$(eval termid := $(shell xdotool getactivewindow))
+	$(eval browid := $(shell xdotool search --onlyvisible --class "Google-Chrome"))
+	xdotool windowfocus $(browid) key "F5"
+	xdotool windowfocus $(termid)
+
 clean:
 	rm -f index.html
