@@ -4,7 +4,7 @@ all: index.html
 
 index.html: $(SRC)
 	pandoc -s -t revealjs -V revealjs-url=https://revealjs.com \
-        --css=../custom.css \
+        --css=https://yuu.github.io/slideshow/custom.css \
 	-V transition=fade \
 	-V theme:beige \
 	-V width=1920 -V height=1080 \
