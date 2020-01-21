@@ -3,7 +3,8 @@ SRC := $(filter-out ./README.md, $(sort $(wildcard ./*.md)))
 all: index.html
 
 index.html: $(SRC)
-	pandoc -s -t revealjs -V revealjs-url=https://yuu.github.io/slideshow/reveal.js \
+	pandoc -s -t revealjs -V revealjs-url=https://revealjs.com \
+        --css=../custom.css \
 	-V transition=fade \
 	-V theme:beige \
 	-V width=1920 -V height=1080 \
