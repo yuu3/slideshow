@@ -10,9 +10,6 @@ index.html: $(SRC)
 	-V width=1920 -V height=1080 \
 	--mathjax -o $@ $(SRC)
 
-local.html: $(SRC)
-	pandoc -s -t revealjs -V revealjs-url=../reveal.js -V transition=fade --mathjax -V theme:beige -o $@ $(SRC)
-
 refleash: index.html
 	$(eval termid := $(shell xdotool getactivewindow))
 	$(eval browid := $(shell xdotool search --onlyvisible --class "Google-Chrome"))
