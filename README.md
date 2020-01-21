@@ -1,4 +1,4 @@
 # slideshow
 
-* [ANSIBLEを使おう](ansible00/index.html)
+* [ANSIBLEを使おう](intro-ansible/index.html)
 * [i.MX 8 紹介](overview-imx8)
