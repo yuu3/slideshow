@@ -1,9 +1,16 @@
 SRC := $(filter-out ./README.md, $(sort $(wildcard ./*.md)))
+CUSTOM_CSS := https://yuu.github.io/slideshow/custom.css
 
 all: index.html
 
 index.html: $(SRC)
-	pandoc -s -t revealjs -V revealjs-url=https://unpkg.com/reveal.js/ --css=https://yuu.github.io/slideshow/custom.css -V transition=fade -V theme:beige --mathjax -o $@ $(SRC)
+	pandoc -s -t revealjs \
+        -V revealjs-url=https://unpkg.com/reveal.js/ \
+        --css=$(CUSTOM_CSS) \
+	-V transition=fade \
+	-V theme:beige \
+	-V width=1920 -V height=1080 \
+	--mathjax -o $@ $(SRC)
 
 refleash: index.html
 	$(eval termid := $(shell xdotool getactivewindow))
