@@ -24,7 +24,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: install dependencies
-      run: sudo apt install make
+      run: apt install make
   
     - name: generate by pandoc
       run: for x in `find . -type d -maxdepth 1 |egrep -v 'docs|.git|^\.$'`; do cd $x; make; cd ..; mkdir -p docs/$x; cp $x/index.html docs/$x/; done
