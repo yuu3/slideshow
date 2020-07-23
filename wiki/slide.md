@@ -93,7 +93,7 @@ date: 2020-07-23
 - https://note.com/yoki_inc/n/n1b481d9dcd5a
 - サービスがないので、これくらいシンプルなwikiがいいが、ツライ
 
-# [Growi]
+# [Growi](https://growi.org/ja/)
 ## 所感
 - https://qiita.com/yuki-takei/items/5df9601039ccfc1df01f
 - Crowiと同様
