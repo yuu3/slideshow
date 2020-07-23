@@ -3,7 +3,7 @@ SRC := $(filter-out ./README.md, $(sort $(wildcard ./*.md)))
 all: index.html
 
 index.html: $(SRC)
-	pandoc -s -t revealjs -V revealjs-url=https://revealjs.com --css=https://yuu.github.io/slideshow/custom.css -V transition=fade -V theme:beige --mathjax -o $@ $(SRC)
+	pandoc -s -t revealjs -V revealjs-url=https://unpkg.com/reveal.js/ --css=https://yuu.github.io/slideshow/custom.css -V transition=fade -V theme:beige --mathjax -o $@ $(SRC)
 
 refleash: index.html
 	$(eval termid := $(shell xdotool getactivewindow))
